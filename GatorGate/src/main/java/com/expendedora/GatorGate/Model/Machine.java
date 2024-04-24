@@ -24,15 +24,21 @@ public class Machine {
 
     private double stonks;
 
+    private String Status;
 
 
 
 
+    // set and getters
 
 
+    public String getStatus() {
+        return Status;
+    }
 
-
-
+    public void setStatus(String status) {
+        Status = status;
+    }
 
     public long getId() {
         return id;
@@ -81,18 +87,15 @@ public class Machine {
 
     public int calculateMinimalProduct() {
         int totalQuantity = 0;
-        int totalQuantitySold = 0;
+         // arreglado el error de restar 2 veces los prodcutos vendidos :)
 
-        // Itera sobre la lista de productos y suma las cantidades y cantidades vendidas
         for (Product product : products) {
             totalQuantity += product.getQuantity();
-            totalQuantitySold += product.getQuantitysold();
         }
 
-        // Calcula el minimalproduct restando la cantidad total y la cantidad vendida
-        minimalproduct = totalQuantity - totalQuantitySold;
-
-        return minimalproduct;
+        return totalQuantity ;
     }
+
+
 
 }
